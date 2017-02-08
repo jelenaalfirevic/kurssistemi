@@ -16,6 +16,7 @@
 		9FAFAE3F1E4511F600CBCD00 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFAE3E1E4511F600CBCD00 /* Article.m */; };
 		9FAFAE421E45C8A900CBCD00 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFAE411E45C8A900CBCD00 /* ArticleTableViewCell.m */; };
 		9FAFAE451E45E11500CBCD00 /* UIImageView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFAE441E45E11500CBCD00 /* UIImageView+Utilities.m */; };
+		9FAFAE481E4B8A9B00CBCD00 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFAE471E4B8A9B00CBCD00 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		9FAFAE411E45C8A900CBCD00 /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 		9FAFAE431E45E11500CBCD00 /* UIImageView+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Utilities.h"; sourceTree = "<group>"; };
 		9FAFAE441E45E11500CBCD00 /* UIImageView+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Utilities.m"; sourceTree = "<group>"; };
+		9FAFAE461E4B8A9B00CBCD00 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		9FAFAE471E4B8A9B00CBCD00 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				9FAFAE2D1E45063400CBCD00 /* HomeViewController.m */,
 				9FAFAE401E45C8A900CBCD00 /* ArticleTableViewCell.h */,
 				9FAFAE411E45C8A900CBCD00 /* ArticleTableViewCell.m */,
+				9FAFAE461E4B8A9B00CBCD00 /* WebViewController.h */,
+				9FAFAE471E4B8A9B00CBCD00 /* WebViewController.m */,
 				9FAFAE431E45E11500CBCD00 /* UIImageView+Utilities.h */,
 				9FAFAE441E45E11500CBCD00 /* UIImageView+Utilities.m */,
 				9FAFAE3D1E4511F600CBCD00 /* Article.h */,
@@ -166,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FAFAE3F1E4511F600CBCD00 /* Article.m in Sources */,
+				9FAFAE481E4B8A9B00CBCD00 /* WebViewController.m in Sources */,
 				9FAFAE451E45E11500CBCD00 /* UIImageView+Utilities.m in Sources */,
 				9FAFAE2E1E45063400CBCD00 /* HomeViewController.m in Sources */,
 				9FAFAE2B1E45063400CBCD00 /* AppDelegate.m in Sources */,
