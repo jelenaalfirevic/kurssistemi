@@ -17,6 +17,8 @@
 		9FAFAE421E45C8A900CBCD00 /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFAE411E45C8A900CBCD00 /* ArticleTableViewCell.m */; };
 		9FAFAE451E45E11500CBCD00 /* UIImageView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFAE441E45E11500CBCD00 /* UIImageView+Utilities.m */; };
 		9FAFAE481E4B8A9B00CBCD00 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFAE471E4B8A9B00CBCD00 /* WebViewController.m */; };
+		9FAFAE4C1E4E2C0300CBCD00 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFAE4B1E4E2C0200CBCD00 /* Reachability.m */; };
+		9FAFAE4F1E4E2C3D00CBCD00 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FAFAE4E1E4E2C3D00CBCD00 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		9FAFAE441E45E11500CBCD00 /* UIImageView+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Utilities.m"; sourceTree = "<group>"; };
 		9FAFAE461E4B8A9B00CBCD00 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		9FAFAE471E4B8A9B00CBCD00 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		9FAFAE4A1E4E2C0200CBCD00 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9FAFAE4B1E4E2C0200CBCD00 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9FAFAE4E1E4E2C3D00CBCD00 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FAFAE4F1E4E2C3D00CBCD00 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				9FAFAE251E45063400CBCD00 /* Vesti */,
+				9FAFAE4D1E4E2C3D00CBCD00 /* Frameworks */,
 				9FAFAE241E45063400CBCD00 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +77,7 @@
 		9FAFAE251E45063400CBCD00 /* Vesti */ = {
 			isa = PBXGroup;
 			children = (
+				9FAFAE491E4E2C0200CBCD00 /* Reachability */,
 				9FAFAE291E45063400CBCD00 /* AppDelegate.h */,
 				9FAFAE2A1E45063400CBCD00 /* AppDelegate.m */,
 				9FAFAE2C1E45063400CBCD00 /* HomeViewController.h */,
@@ -97,6 +105,23 @@
 				9FAFAE271E45063400CBCD00 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FAFAE491E4E2C0200CBCD00 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				9FAFAE4A1E4E2C0200CBCD00 /* Reachability.h */,
+				9FAFAE4B1E4E2C0200CBCD00 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		9FAFAE4D1E4E2C3D00CBCD00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FAFAE4E1E4E2C3D00CBCD00 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +197,7 @@
 			files = (
 				9FAFAE3F1E4511F600CBCD00 /* Article.m in Sources */,
 				9FAFAE481E4B8A9B00CBCD00 /* WebViewController.m in Sources */,
+				9FAFAE4C1E4E2C0300CBCD00 /* Reachability.m in Sources */,
 				9FAFAE451E45E11500CBCD00 /* UIImageView+Utilities.m in Sources */,
 				9FAFAE2E1E45063400CBCD00 /* HomeViewController.m in Sources */,
 				9FAFAE2B1E45063400CBCD00 /* AppDelegate.m in Sources */,
