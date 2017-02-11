@@ -143,7 +143,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkP-Ou-RhD">
-                                <rect key="frame" x="97.5" y="131" width="180" height="180"/>
+                                <rect key="frame" x="97.5" y="87" width="180" height="180"/>
                                 <color key="backgroundColor" red="0.47840040922164917" green="0.47453474998474121" blue="0.47836583852767944" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="PmL-jF-Mx3"/>
@@ -299,7 +299,7 @@
                                         <rect key="frame" x="71" y="59" width="296" height="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next"/>
                                         <connections>
                                             <outlet property="delegate" destination="JhB-Dn-ubp" id="NWS-eE-XAj"/>
                                         </connections>
