@@ -7,12 +7,12 @@
 //
 
 #import "HomeViewController.h"
+#import "Helpers.h"
 
 @interface HomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak,nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak,nonatomic) IBOutlet UIImageView *userImageView;
 @property (weak,nonatomic) IBOutlet UILabel *tasksLabel;
-@property (weak,nonatomic) IBOutlet UILabel *noTasksLabel;
 @property (weak,nonatomic) IBOutlet UILabel *dataLabel;
 @property (weak,nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak,nonatomic) IBOutlet UITableView *tableView;
@@ -41,6 +41,11 @@
 #pragma mark - Private API
 
 - (void)configureWelcomeLabel {
+    if ([Helpers isMorning]) {
+       self.welcomeLabel.text = @"Good Morning!";
+    } else {
+       self.welcomeLabel.text = @"Good Afternoon";
+    }
     
 }
 

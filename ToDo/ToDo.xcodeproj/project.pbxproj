@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F1E54C41E4F0FC300F18320 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E54C31E4F0FC300F18320 /* HomeViewController.m */; };
+		9F1E54C71E54CAE100F18320 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E54C61E54CAE100F18320 /* Helpers.m */; };
+		9F1E54D31E57858100F18320 /* DateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E54D21E57858100F18320 /* DateCollectionViewCell.m */; };
 		9FCE43751E16D12B0021BF9B /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE43741E16D12B0021BF9B /* SignUpViewController.m */; };
 		C445CC811E01BDD7005A0825 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C445CC801E01BDD7005A0825 /* main.m */; };
 		C445CC841E01BDD7005A0825 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C445CC831E01BDD7005A0825 /* AppDelegate.m */; };
@@ -20,6 +22,10 @@
 /* Begin PBXFileReference section */
 		9F1E54C21E4F0FC300F18320 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		9F1E54C31E4F0FC300F18320 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		9F1E54C51E54CAE100F18320 /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
+		9F1E54C61E54CAE100F18320 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
+		9F1E54D11E57858100F18320 /* DateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCollectionViewCell.h; sourceTree = "<group>"; };
+		9F1E54D21E57858100F18320 /* DateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCollectionViewCell.m; sourceTree = "<group>"; };
 		9FCE43731E16D12B0021BF9B /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		9FCE43741E16D12B0021BF9B /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		C445CC7C1E01BDD7005A0825 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +51,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F1E54CC1E5783F000F18320 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C445CC821E01BDD7005A0825 /* AppDelegate.h */,
+				C445CC831E01BDD7005A0825 /* AppDelegate.m */,
+			);
+			name = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		9F1E54CD1E57848900F18320 /* View Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				9F1E54C21E4F0FC300F18320 /* HomeViewController.h */,
+				9F1E54C31E4F0FC300F18320 /* HomeViewController.m */,
+				C445CC961E01CA84005A0825 /* LoginViewController.h */,
+				C445CC971E01CA84005A0825 /* LoginViewController.m */,
+				9FCE43731E16D12B0021BF9B /* SignUpViewController.h */,
+				9FCE43741E16D12B0021BF9B /* SignUpViewController.m */,
+			);
+			name = "View Controlers";
+			sourceTree = "<group>";
+		};
+		9F1E54CE1E5784AE00F18320 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9F1E54C51E54CAE100F18320 /* Helpers.h */,
+				9F1E54C61E54CAE100F18320 /* Helpers.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		9F1E54CF1E5784E500F18320 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C445CC881E01BDD7005A0825 /* Main.storyboard */,
+				C445CC8D1E01BDD7005A0825 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		9F1E54D01E57853F00F18320 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9F1E54D11E57858100F18320 /* DateCollectionViewCell.h */,
+				9F1E54D21E57858100F18320 /* DateCollectionViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		C445CC731E01BDD7005A0825 = {
 			isa = PBXGroup;
 			children = (
@@ -64,18 +119,10 @@
 		C445CC7E1E01BDD7005A0825 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				C445CC821E01BDD7005A0825 /* AppDelegate.h */,
-				C445CC831E01BDD7005A0825 /* AppDelegate.m */,
-				9F1E54C21E4F0FC300F18320 /* HomeViewController.h */,
-				9F1E54C31E4F0FC300F18320 /* HomeViewController.m */,
-				C445CC961E01CA84005A0825 /* LoginViewController.h */,
-				C445CC971E01CA84005A0825 /* LoginViewController.m */,
-				9FCE43731E16D12B0021BF9B /* SignUpViewController.h */,
-				9FCE43741E16D12B0021BF9B /* SignUpViewController.m */,
-				C445CC881E01BDD7005A0825 /* Main.storyboard */,
-				C445CC8B1E01BDD7005A0825 /* Assets.xcassets */,
-				C445CC8D1E01BDD7005A0825 /* LaunchScreen.storyboard */,
-				C445CC901E01BDD7005A0825 /* Info.plist */,
+				9F1E54D01E57853F00F18320 /* Cells */,
+				9F1E54CD1E57848900F18320 /* View Controlers */,
+				9F1E54CE1E5784AE00F18320 /* Utilities */,
+				9F1E54CF1E5784E500F18320 /* Storyboards */,
 				C445CC7F1E01BDD7005A0825 /* Supporting Files */,
 			);
 			path = ToDo;
@@ -84,6 +131,9 @@
 		C445CC7F1E01BDD7005A0825 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9F1E54CC1E5783F000F18320 /* Application Delegate */,
+				C445CC8B1E01BDD7005A0825 /* Assets.xcassets */,
+				C445CC901E01BDD7005A0825 /* Info.plist */,
 				C445CC801E01BDD7005A0825 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -161,8 +211,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C445CC841E01BDD7005A0825 /* AppDelegate.m in Sources */,
+				9F1E54D31E57858100F18320 /* DateCollectionViewCell.m in Sources */,
 				C445CC811E01BDD7005A0825 /* main.m in Sources */,
 				9FCE43751E16D12B0021BF9B /* SignUpViewController.m in Sources */,
+				9F1E54C71E54CAE100F18320 /* Helpers.m in Sources */,
 				9F1E54C41E4F0FC300F18320 /* HomeViewController.m in Sources */,
 				C445CC981E01CA84005A0825 /* LoginViewController.m in Sources */,
 			);
