@@ -10,14 +10,18 @@
 		9F1E54C41E4F0FC300F18320 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E54C31E4F0FC300F18320 /* HomeViewController.m */; };
 		9F1E54C71E54CAE100F18320 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E54C61E54CAE100F18320 /* Helpers.m */; };
 		9F1E54D31E57858100F18320 /* DateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E54D21E57858100F18320 /* DateCollectionViewCell.m */; };
-		9F1E54D61E5E1E1B00F18320 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E54D51E5E1E1B00F18320 /* TaskViewController.m */; };
 		9FCE43751E16D12B0021BF9B /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE43741E16D12B0021BF9B /* SignUpViewController.m */; };
+		9FF942FB1E617A8F00EB9D22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF942FA1E617A8F00EB9D22 /* CoreLocation.framework */; };
+		9FF942FE1E61831E00EB9D22 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF942FD1E61831E00EB9D22 /* DataManager.m */; };
+		9FF943021E674D6D00EB9D22 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF943011E674D6D00EB9D22 /* User.m */; };
 		C445CC811E01BDD7005A0825 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C445CC801E01BDD7005A0825 /* main.m */; };
 		C445CC841E01BDD7005A0825 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C445CC831E01BDD7005A0825 /* AppDelegate.m */; };
 		C445CC8A1E01BDD7005A0825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C445CC881E01BDD7005A0825 /* Main.storyboard */; };
 		C445CC8C1E01BDD7005A0825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C445CC8B1E01BDD7005A0825 /* Assets.xcassets */; };
 		C445CC8F1E01BDD7005A0825 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C445CC8D1E01BDD7005A0825 /* LaunchScreen.storyboard */; };
 		C445CC981E01CA84005A0825 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C445CC971E01CA84005A0825 /* LoginViewController.m */; };
+		C50DC3D41E5E1E0E0049FCA6 /* TaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C50DC3D31E5E1E0E0049FCA6 /* TaskViewController.m */; };
+		C50DC3D71E60B4000049FCA6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C50DC3D61E60B4000049FCA6 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,10 +31,13 @@
 		9F1E54C61E54CAE100F18320 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		9F1E54D11E57858100F18320 /* DateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCollectionViewCell.h; sourceTree = "<group>"; };
 		9F1E54D21E57858100F18320 /* DateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCollectionViewCell.m; sourceTree = "<group>"; };
-		9F1E54D41E5E1E1B00F18320 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
-		9F1E54D51E5E1E1B00F18320 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
 		9FCE43731E16D12B0021BF9B /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		9FCE43741E16D12B0021BF9B /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		9FF942FA1E617A8F00EB9D22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9FF942FC1E61831E00EB9D22 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		9FF942FD1E61831E00EB9D22 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		9FF943001E674D6D00EB9D22 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		9FF943011E674D6D00EB9D22 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		C445CC7C1E01BDD7005A0825 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C445CC801E01BDD7005A0825 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C445CC821E01BDD7005A0825 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,6 +48,11 @@
 		C445CC901E01BDD7005A0825 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C445CC961E01CA84005A0825 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C445CC971E01CA84005A0825 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C50DC3D21E5E1E0E0049FCA6 /* TaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskViewController.h; sourceTree = "<group>"; };
+		C50DC3D31E5E1E0E0049FCA6 /* TaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskViewController.m; sourceTree = "<group>"; };
+		C50DC3D61E60B4000049FCA6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C50DC3D81E60B71F0049FCA6 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		C50DC3D91E60B86D0049FCA6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF942FB1E617A8F00EB9D22 /* CoreLocation.framework in Frameworks */,
+				C50DC3D71E60B4000049FCA6 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,8 +82,8 @@
 			children = (
 				9F1E54C21E4F0FC300F18320 /* HomeViewController.h */,
 				9F1E54C31E4F0FC300F18320 /* HomeViewController.m */,
-				9F1E54D41E5E1E1B00F18320 /* TaskViewController.h */,
-				9F1E54D51E5E1E1B00F18320 /* TaskViewController.m */,
+				C50DC3D21E5E1E0E0049FCA6 /* TaskViewController.h */,
+				C50DC3D31E5E1E0E0049FCA6 /* TaskViewController.m */,
 				C445CC961E01CA84005A0825 /* LoginViewController.h */,
 				C445CC971E01CA84005A0825 /* LoginViewController.m */,
 				9FCE43731E16D12B0021BF9B /* SignUpViewController.h */,
@@ -81,8 +95,11 @@
 		9F1E54CE1E5784AE00F18320 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C50DC3D81E60B71F0049FCA6 /* Constants.h */,
 				9F1E54C51E54CAE100F18320 /* Helpers.h */,
 				9F1E54C61E54CAE100F18320 /* Helpers.m */,
+				9FF942FC1E61831E00EB9D22 /* DataManager.h */,
+				9FF942FD1E61831E00EB9D22 /* DataManager.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -105,11 +122,21 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		9FF942FF1E674D0200EB9D22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9FF943001E674D6D00EB9D22 /* User.h */,
+				9FF943011E674D6D00EB9D22 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		C445CC731E01BDD7005A0825 = {
 			isa = PBXGroup;
 			children = (
 				C445CC7E1E01BDD7005A0825 /* ToDo */,
 				C445CC7D1E01BDD7005A0825 /* Products */,
+				C50DC3D51E60B4000049FCA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +151,7 @@
 		C445CC7E1E01BDD7005A0825 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				9FF942FF1E674D0200EB9D22 /* Models */,
 				9F1E54D01E57853F00F18320 /* Cells */,
 				9F1E54CD1E57848900F18320 /* View Controlers */,
 				9F1E54CE1E5784AE00F18320 /* Utilities */,
@@ -140,8 +168,18 @@
 				C445CC8B1E01BDD7005A0825 /* Assets.xcassets */,
 				C445CC901E01BDD7005A0825 /* Info.plist */,
 				C445CC801E01BDD7005A0825 /* main.m */,
+				C50DC3D91E60B86D0049FCA6 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C50DC3D51E60B4000049FCA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FF942FA1E617A8F00EB9D22 /* CoreLocation.framework */,
+				C50DC3D61E60B4000049FCA6 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +214,11 @@
 					C445CC7B1E01BDD7005A0825 = {
 						CreatedOnToolsVersion = 8.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -215,13 +258,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF943021E674D6D00EB9D22 /* User.m in Sources */,
 				C445CC841E01BDD7005A0825 /* AppDelegate.m in Sources */,
-				9F1E54D61E5E1E1B00F18320 /* TaskViewController.m in Sources */,
+				C50DC3D41E5E1E0E0049FCA6 /* TaskViewController.m in Sources */,
 				9F1E54D31E57858100F18320 /* DateCollectionViewCell.m in Sources */,
 				C445CC811E01BDD7005A0825 /* main.m in Sources */,
 				9FCE43751E16D12B0021BF9B /* SignUpViewController.m in Sources */,
 				9F1E54C71E54CAE100F18320 /* Helpers.m in Sources */,
 				9F1E54C41E4F0FC300F18320 /* HomeViewController.m in Sources */,
+				9FF942FE1E61831E00EB9D22 /* DataManager.m in Sources */,
 				C445CC981E01CA84005A0825 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.sistemi.ToDo;
@@ -351,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = $PROJECT_NAME/PrefixHeader.pch;
 				INFOPLIST_FILE = ToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rs.sistemi.ToDo;

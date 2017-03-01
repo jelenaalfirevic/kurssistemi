@@ -7,7 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "Helpers.h"
 #import "DateCollectionViewCell.h"
 
 @interface HomeViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -53,54 +52,54 @@
 
 - (IBAction)previousButtonTapped {
     [self updateMonth:-1];
-    
 }
 
 - (IBAction)nextButtonTapped {
     [self updateMonth:1];
-    
+ 
 }
 
-- (IBAction)userImageViewTapped:(id)sender {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Choose sorce:" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+- (IBAction)TapGestureRecognizer:(id)sender {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Choose source:" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-    UIAlertAction *photoLibraryAction = [UIAlertAction actionWithTitle:@"Photo Library"
-                                                                 style:UIAlertActionStyleDefault
-                                                               handler:^(UIAlertAction *action)
-    {
+    // Photo Library
+    UIAlertAction *photoLibraryAction = [UIAlertAction actionWithTitle:@"Photo Library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    if (picker) {
+        picker.allowsEditing = YES;
+        picker.delegate = self;
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:picker animated:YES completion:nil];
+       }
+    }];
+    [alertController addAction:photoLibraryAction];
+    
+    //Camera
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         if (picker) {
             picker.allowsEditing = YES;
             picker.delegate = self;
-            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
             [self presentViewController:picker animated:YES completion:nil];
         }
     }];
-    [alertController addAction:photoLibraryAction];
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"Camera"
-                                                                     style:UIAlertActionStyleDefault
-                                                                   handler:^(UIAlertAction *action)
-        {
-            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-            if (picker) {
-                picker.allowsEditing = YES;
-                picker.delegate = self;
-                picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-                [self presentViewController:picker animated:YES completion:nil];
-            }
-        }];
-        [alertController addAction:cameraAction];
+    [alertController addAction:cameraAction];
+
     }
-    
+   
     [self presentViewController:alertController animated:YES completion:nil];
-    
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancle" style:UIAlertActionStyleCancel handler:nil];
+
+
+    //Cancel
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     [alertController addAction:cancelAction];
-    
     [self presentViewController:alertController animated:YES completion:nil];
+
 }
+
 
 #pragma mark - Private API
 
@@ -140,7 +139,7 @@
     
 }
 
--  (void)scrollToCurrentDay {
+- (void)scrollToCurrentDay {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         });
     NSInteger currentDay = [[NSCalendar currentCalendar] component:NSCalendarUnitDay fromDate:self.selectedDate];
@@ -166,6 +165,13 @@
     [self configureTasks];
     [self configureUserImage];
     self.selectedDate = [NSDate date];
+    
+    // Load image from NSUserDefaults
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE]) {
+        NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:USER_IMAGE];
+        UIImage *image = [[UIImage alloc] initWithData:data];
+        self.userImageView.image = image;
+    }
     
 }
 
@@ -216,9 +222,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - UIImagePickerControllerDelegate
+#pragma  mark - UIImagePickerControllerDelegate
 
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *image = info[UIImagePickerControllerEditedImage];
     if (!image) {
         image = info[UIImagePickerControllerOriginalImage];
@@ -226,13 +232,17 @@
     
     self.userImageView.image = image;
     
+    // Store image to NSUserDefaults
+    NSData *data = UIImageJPEGRepresentation(image, 1.0);
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:USER_IMAGE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [picker dismissViewControllerAnimated:YES completion:nil];
-
+ 
 }
 
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:nil];
-    
 }
 
 

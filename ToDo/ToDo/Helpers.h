@@ -13,4 +13,7 @@
 + (NSString *)valueFrom:(NSDate *)date withFormat:(NSString *)format;
 + (NSInteger)numberOfDaysInMonthForDate:(NSDate *)date;
 + (BOOL)isDate:(NSDate *)date sameAsDate:(NSDate *)otherDate;
++ (void)saveCustomObjectFromUserDefaultsForKey:(id)object forKey:(NSString *)key;
++ (id)loadCustomObjectFromUserDefaultsForKey:(NSString *)key;
++ (BOOL)isLoggedIn;
 @end
