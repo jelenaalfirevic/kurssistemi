@@ -17,6 +17,7 @@
 		9FF943051E69E5A300EB9D22 /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FF943031E69E5A200EB9D22 /* ToDo.xcdatamodeld */; };
 		9FF9430D1E69EF5600EB9D22 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF9430C1E69EF5600EB9D22 /* CoreData.framework */; };
 		9FF943101E69F92F00EB9D22 /* TaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF9430F1E69F92F00EB9D22 /* TaskTableViewCell.m */; };
+		9FF943131E6AB19500EB9D22 /* DBTask+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF943121E6AB19500EB9D22 /* DBTask+Utilities.m */; };
 		C445CC811E01BDD7005A0825 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C445CC801E01BDD7005A0825 /* main.m */; };
 		C445CC841E01BDD7005A0825 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C445CC831E01BDD7005A0825 /* AppDelegate.m */; };
 		C445CC8A1E01BDD7005A0825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C445CC881E01BDD7005A0825 /* Main.storyboard */; };
@@ -45,6 +46,8 @@
 		9FF9430C1E69EF5600EB9D22 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9FF9430E1E69F92F00EB9D22 /* TaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskTableViewCell.h; sourceTree = "<group>"; };
 		9FF9430F1E69F92F00EB9D22 /* TaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTableViewCell.m; sourceTree = "<group>"; };
+		9FF943111E6AB19500EB9D22 /* DBTask+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DBTask+Utilities.h"; sourceTree = "<group>"; };
+		9FF943121E6AB19500EB9D22 /* DBTask+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DBTask+Utilities.m"; sourceTree = "<group>"; };
 		C445CC7C1E01BDD7005A0825 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C445CC801E01BDD7005A0825 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C445CC821E01BDD7005A0825 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				9FF943031E69E5A200EB9D22 /* ToDo.xcdatamodeld */,
 				9FF943001E674D6D00EB9D22 /* User.h */,
 				9FF943011E674D6D00EB9D22 /* User.m */,
+				9FF943111E6AB19500EB9D22 /* DBTask+Utilities.h */,
+				9FF943121E6AB19500EB9D22 /* DBTask+Utilities.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				C445CC811E01BDD7005A0825 /* main.m in Sources */,
 				9FCE43751E16D12B0021BF9B /* SignUpViewController.m in Sources */,
 				9FF943101E69F92F00EB9D22 /* TaskTableViewCell.m in Sources */,
+				9FF943131E6AB19500EB9D22 /* DBTask+Utilities.m in Sources */,
 				9F1E54C71E54CAE100F18320 /* Helpers.m in Sources */,
 				9F1E54C41E4F0FC300F18320 /* HomeViewController.m in Sources */,
 				9FF942FE1E61831E00EB9D22 /* DataManager.m in Sources */,
