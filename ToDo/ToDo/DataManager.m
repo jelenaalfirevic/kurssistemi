@@ -81,35 +81,60 @@
 
 #pragma mark - Public API
 
-- (NSMutableArray *)fetchEntity:(NSString *)entityName
+- (NSArray *)fetchEntity:(NSString *)entityName
                      withFilter:(NSString *)filter
                     withSortAsc:(BOOL)sortAscending
-                         forKey:(NSString *)sortKey {}
+                         forKey:(NSString *)sortKey {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entityName inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entityDescription];
+    
+    // Sorting
+    if (sortKey) {
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortKey ascending:sortAscending];
+        [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    }
+    
+    // Filtering
+    if (filter) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:filter];
+        [fetchRequest setPredicate:predicate];
+    }
+    
+    // Execute fetch request
+    NSError *error;
+    NSArray *resultsArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if (error) {
+        NSLog(@"Error fetching: %@" , error.localizedDescription);
+    }
+    
+    return resultsArray;
+}
 
 - (void)deleteObject:(NSManagedObject *)object {
     [self.managedObjectContext deleteObject:object];
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    
-    if ([appDelegate respondsToSelector:@selector(saveContext)]) {
-        [appDelegate saveContext];
-    }
+    [self.managedObjectContext save:nil];
 }
 
 - (void)updateObject:(NSManagedObject *)object {
-    NSError *error = nil;
-    if ([object.managedObjectContext hasChanges] && ![object.managedObjectContext save:&error]) {
-        NSLog(@"Error updating object in database: %@, %@" , error.localizedDescription, error.userInfo);
-        abort();
-    }
+    [object.managedObjectContext save:nil];
 }
 
 - (void)logObject:(NSManagedObject *)object {
+    NSEntityDescription *description = object.entity;
+    NSDictionary *attributes = [description attributesByName];
     
+    for (NSString *attribute in attributes) {
+        NSLog(@"%@ = %@," , attribute, [object valueForKey:attribute]);
+    }
 }
 
 - (NSInteger)numberOfTasksPerTaskGroup:(TaskGroup)group {
+    NSString *filter = [NSString stringWithFormat:@"group = %ld" , group];
+
     NSArray *tasksArray = [self fetchEntity:NSStringFromClass([DBTask class])
-                                 withFilter:[NSString stringWithFormat:@"group = %ld" , group]
+                                 withFilter:filter
                                 withSortAsc:NO
                                      forKey:nil];
     
@@ -129,7 +154,11 @@
         task.longitude = self.userLocation.coordinate.longitude;
     }
     
-    task.date = [NSDate date];
+    // Date
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+    dateFormater.dateFormat = DATE_FORMAT;
+    task.date = [dateFormater stringFromDate:[NSDate date]];
+    
     task.group = group;
     
     // Save

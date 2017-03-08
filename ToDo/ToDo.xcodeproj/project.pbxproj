@@ -10,6 +10,7 @@
 		9F1E54C41E4F0FC300F18320 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E54C31E4F0FC300F18320 /* HomeViewController.m */; };
 		9F1E54C71E54CAE100F18320 /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E54C61E54CAE100F18320 /* Helpers.m */; };
 		9F1E54D31E57858100F18320 /* DateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E54D21E57858100F18320 /* DateCollectionViewCell.m */; };
+		9F2ABD791E70918800E8B607 /* UIViewController+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2ABD781E70918800E8B607 /* UIViewController+Utilities.m */; };
 		9FCE43751E16D12B0021BF9B /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE43741E16D12B0021BF9B /* SignUpViewController.m */; };
 		9FF942FB1E617A8F00EB9D22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF942FA1E617A8F00EB9D22 /* CoreLocation.framework */; };
 		9FF942FE1E61831E00EB9D22 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF942FD1E61831E00EB9D22 /* DataManager.m */; };
@@ -35,6 +36,8 @@
 		9F1E54C61E54CAE100F18320 /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helpers.m; sourceTree = "<group>"; };
 		9F1E54D11E57858100F18320 /* DateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCollectionViewCell.h; sourceTree = "<group>"; };
 		9F1E54D21E57858100F18320 /* DateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCollectionViewCell.m; sourceTree = "<group>"; };
+		9F2ABD771E70918800E8B607 /* UIViewController+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utilities.h"; sourceTree = "<group>"; };
+		9F2ABD781E70918800E8B607 /* UIViewController+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utilities.m"; sourceTree = "<group>"; };
 		9FCE43731E16D12B0021BF9B /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		9FCE43741E16D12B0021BF9B /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		9FF942FA1E617A8F00EB9D22 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -111,6 +114,8 @@
 				9F1E54C61E54CAE100F18320 /* Helpers.m */,
 				9FF942FC1E61831E00EB9D22 /* DataManager.h */,
 				9FF942FD1E61831E00EB9D22 /* DataManager.m */,
+				9F2ABD771E70918800E8B607 /* UIViewController+Utilities.h */,
+				9F2ABD781E70918800E8B607 /* UIViewController+Utilities.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				9FF943101E69F92F00EB9D22 /* TaskTableViewCell.m in Sources */,
 				9FF943131E6AB19500EB9D22 /* DBTask+Utilities.m in Sources */,
 				9F1E54C71E54CAE100F18320 /* Helpers.m in Sources */,
+				9F2ABD791E70918800E8B607 /* UIViewController+Utilities.m in Sources */,
 				9F1E54C41E4F0FC300F18320 /* HomeViewController.m in Sources */,
 				9FF942FE1E61831E00EB9D22 /* DataManager.m in Sources */,
 				9FF943051E69E5A300EB9D22 /* ToDo.xcdatamodeld in Sources */,

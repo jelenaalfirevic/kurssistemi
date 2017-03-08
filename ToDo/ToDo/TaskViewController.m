@@ -21,6 +21,7 @@
 //@property (weak, nonatomic) IBOutlet UIView *purpleView;
 //@property (weak, nonatomic) IBOutlet UIView *orangeView;
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *viewsArray;
+@property (nonatomic) NSInteger group;
 @end
 @implementation TaskViewController
 
@@ -32,9 +33,17 @@
 }
 
 - (IBAction)addButton:(UIButton *)sender {
+    if ([self validationPassed]) {
+        [[DataManager sharedManager] saveTaskWithTitle:self.titleTextField.text
+                                           description:self.descriptionTextField.text
+                                                 group:self.group];
+        
+        [self backButtonTapped:nil];
+    }
 }
 
 - (IBAction)groupButtonTapped:(UIButton *)sender {
+    self.group = sender.tag;
 //
 //    switch (sender.tag) {
 //        case TaskGroupCompleted:
@@ -57,11 +66,29 @@
      }
 }
 
+#pragma mark - Private API
+
+- (BOOL)validationPassed {
+    if (self.titleTextField.text.length == 0) {
+        [self showAlertWithTitle:@"Error"
+                      andMessage:@"Please enter task title"];
+        return NO;
+    }
+    if (self.descriptionTextField.text.length == 0) {
+        [self showAlertWithTitle:@"Error"
+                      andMessage:@"Please enter task description"];
+        return NO;
+    }
+    
+    return YES;
+}
+
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.group = TaskGroupNotCompleted;
     self.locationTextField.text = [DataManager sharedManager].userLocality;
     
     // Via delegate

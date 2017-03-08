@@ -21,7 +21,7 @@
 @property (weak,nonatomic) id <DataManagerDelegate> delegate;
 
 + (instancetype)sharedManager;
-- (NSMutableArray *)fetchEntity:(NSString *)entityName
+- (NSArray *)fetchEntity:(NSString *)entityName
                      withFilter:(NSString *)filter
                     withSortAsc:(BOOL)sortAscending
                          forKey:(NSString *)sortKey;
