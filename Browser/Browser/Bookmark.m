@@ -9,4 +9,15 @@
 #import "Bookmark.h"
 
 @implementation Bookmark
+
+#pragma mark - Designated Initializer
+
+- (instancetype)initWithTitle:(NSString *)title andURL:(NSString *)url {
+    if (self = [super init]) {
+        self.title = title;
+        self.url = url;
+    }
+    
+    return self;
+}
 @end
