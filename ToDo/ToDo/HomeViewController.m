@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "TaskViewController.h"
 #import "DateCollectionViewCell.h"
 #import "TaskTableViewCell.h"
 
@@ -18,8 +19,9 @@
 @property (weak,nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak,nonatomic) IBOutlet UITableView *tableView;
 @property (strong,nonatomic) NSMutableArray *datesArray;
-@property (strong,nonatomic) NSArray *tasksArray;
+@property (strong,nonatomic) NSMutableArray *tasksArray;
 @property (strong,nonatomic) NSDate *selectedDate;
+@property (strong,nonatomic) DBTask *selectedTask;
 @end
 
 @implementation HomeViewController
@@ -119,9 +121,17 @@
     
     NSString *filter = [NSString stringWithFormat:@"date LIKE '%@'", [dateFormater stringFromDate:self.selectedDate]];
     
-    self.tasksArray = [[DataManager sharedManager] fetchEntity:NSStringFromClass(DBTask.class) withFilter:filter withSortAsc:YES forKey:@"date"];
+    self.tasksArray = [DATA_MANAGER fetchEntity:NSStringFromClass(DBTask.class) withFilter:filter withSortAsc:YES forKey:@"date"];
     [self.tableView reloadData];
     
+    [self configureTasksLabel];
+    
+}
+
+- (void)configureTasksLabel {
+    
+    self.tasksLabel.text = [NSString stringWithFormat:@"%ld" , self.tasksArray.count];
+    self.tasksLabel.hidden = (self.tasksArray.count == 0) ? YES : NO;
 }
 
 - (void)configureCalendar {
@@ -181,6 +191,24 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.selectedDate = [NSDate date];
+    self.selectedTask = nil;	
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // if ([segue.identifier isEqualToString:@"TaskSegue"]) {
+    
+    if ([segue.destinationViewController isKindOfClass:TaskViewController.class]) {
+        TaskViewController *toViewController = segue.destinationViewController;
+        toViewController.task = self.selectedTask;
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -234,6 +262,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    self.selectedTask = self.tasksArray[indexPath.row];
+    [self performSegueWithIdentifier:@"TaskSegue" sender:nil];
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        DBTask *task = self.tasksArray[indexPath.row];
+        
+        [self.tasksArray removeObject:task];
+        [DATA_MANAGER deleteObject:task];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        [self configureTasksLabel];
+    }
 }
 
 #pragma  mark - UIImagePickerControllerDelegate

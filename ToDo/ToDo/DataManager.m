@@ -81,7 +81,7 @@
 
 #pragma mark - Public API
 
-- (NSArray *)fetchEntity:(NSString *)entityName
+- (NSMutableArray *)fetchEntity:(NSString *)entityName
                      withFilter:(NSString *)filter
                     withSortAsc:(BOOL)sortAscending
                          forKey:(NSString *)sortKey {
@@ -109,7 +109,7 @@
         NSLog(@"Error fetching: %@" , error.localizedDescription);
     }
     
-    return resultsArray;
+    return [resultsArray mutableCopy];
 }
 
 - (void)deleteObject:(NSManagedObject *)object {
@@ -146,7 +146,7 @@
                     group:(NSInteger)group {
     DBTask *task = (DBTask *)[NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([DBTask class]) inManagedObjectContext:self.managedObjectContext];
     
-    task.title = title;
+    task.heading = title;
     task.desc = description;
     
     if (self.userLocation) {

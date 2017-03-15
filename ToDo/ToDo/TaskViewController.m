@@ -25,6 +25,22 @@
 @end
 @implementation TaskViewController
 
+#pragma mark - Properties
+
+- (void)setGroup:(NSInteger)group {
+    _group = group;
+    
+    // Move selector to approriate group
+    for (UIView *view in self.viewsArray) {
+        if (view.tag == group) {
+            [UIView animateWithDuration:kAnimationDuration animations:^{
+                self.selectorImageView.center = view.center;
+            }];
+        }
+    }
+
+}
+
 
 #pragma mark - Actions
 
@@ -34,9 +50,19 @@
 
 - (IBAction)addButton:(UIButton *)sender {
     if ([self validationPassed]) {
-        [[DataManager sharedManager] saveTaskWithTitle:self.titleTextField.text
+        if (self.task) {
+            self.task.heading = self.titleTextField.text;
+            self.task.desc = self.descriptionTextField.text;
+            self.task.group = self.group;
+            self.task.latitude = DATA_MANAGER.userLocation.coordinate.latitude;
+            self.task.longitude = DATA_MANAGER.userLocation.coordinate.longitude;
+            
+            [DATA_MANAGER updateObject:self.task];
+        } else {
+        [DATA_MANAGER saveTaskWithTitle:self.titleTextField.text
                                            description:self.descriptionTextField.text
                                                  group:self.group];
+         }
         
         [self backButtonTapped:nil];
     }
@@ -57,13 +83,6 @@
 //            break;
 //    }
     
-    for (UIView *view in self.viewsArray) {
-        if (view.tag == sender.tag) {
-            [UIView animateWithDuration:kAnimationDuration animations:^{
-                self.selectorImageView.center = view.center;
-            }];
-         }
-     }
 }
 
 #pragma mark - Private API
@@ -83,21 +102,46 @@
     return YES;
 }
 
+- (void)configureUI {
+    self.locationTextField.text = DATA_MANAGER.userLocality;
+    
+    if (self.task) {
+        self.titleTextField.text = self.task.heading;
+        self.descriptionTextField.text = self.task.desc;
+        self.group = self.task.group;
+        [self.mapView addAnnotation:self.task];
+        
+        [self zoomToCoordinate:self.task.coordinate];
+        
+    } else {
+        self.group = TaskGroupNotCompleted;
+        
+        self.mapView.showsUserLocation = YES;
+        [self zoomToCoordinate:DATA_MANAGER.userLocation.coordinate];
+    }
+}
+
+- (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate {
+    MKCoordinateRegion region = MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(0.5, 0.5));
+    [self.mapView setRegion:region animated:YES];
+    
+
+}
+
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.group = TaskGroupNotCompleted;
-    self.locationTextField.text = [DataManager sharedManager].userLocality;
+    [self configureUI];
     
     // Via delegate
-    DataManager *dataManager = [DataManager sharedManager];
+    DataManager *dataManager = DATA_MANAGER;
     dataManager.delegate = self;
     
     // Via notification
     [[NSNotificationCenter defaultCenter] addObserverForName:LOCALITY_UPDATED_NOTIFICATION object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        self.locationTextField.text = [DataManager sharedManager].userLocality;
+        self.locationTextField.text = DATA_MANAGER.userLocality;
     }];
     
 }
@@ -119,7 +163,7 @@
 #pragma mark - DataManagerDelegate
 
 - (void)dataManagerDidUpdateLocality {
-    self.locationTextField.text = [DataManager sharedManager].userLocality;
+    self.locationTextField.text = DATA_MANAGER.userLocality;
 }
 
 @end
