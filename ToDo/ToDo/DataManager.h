@@ -29,6 +29,7 @@
 - (void)updateObject:(NSManagedObject *)object;
 - (void)logObject:(NSManagedObject *)object;
 - (NSInteger)numberOfTasksPerTaskGroup:(TaskGroup)group;
+- (NSInteger)numberOfTasksForToday;
 - (void)saveTaskWithTitle:(NSString *)title
               description:(NSString *)description
                     group:(NSInteger)group;

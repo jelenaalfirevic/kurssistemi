@@ -67,6 +67,13 @@
     
     return NO;
 }
+
++ (UIViewController *)initViewControllerFrom:(NSString *)storyboardID {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Mail" bundle:[NSBundle mainBundle]];
+    
+    return [storyboard instantiateViewControllerWithIdentifier:storyboardID];
+}
+
     
 
 @end

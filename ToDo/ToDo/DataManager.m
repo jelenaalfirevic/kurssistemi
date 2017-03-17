@@ -141,6 +141,18 @@
     return tasksArray.count;
 }
 
+- (NSInteger)numberOfTasksForToday {
+    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+    dateFormater.dateFormat = DATE_FORMAT;
+    
+    NSString *filter = [NSString stringWithFormat:@"date LIKE '%@'", [dateFormater stringFromDate:[NSDate date]]];
+    
+    NSMutableArray *tasksArray = [self fetchEntity:NSStringFromClass(DBTask.class) withFilter:filter withSortAsc:YES forKey:@"date"];
+    
+    return tasksArray.count;
+}
+
+
 - (void)saveTaskWithTitle:(NSString *)title
               description:(NSString *)description
                     group:(NSInteger)group {

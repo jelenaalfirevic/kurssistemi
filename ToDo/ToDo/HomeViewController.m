@@ -46,6 +46,7 @@
 #pragma mark - Actions
 
 - (IBAction)menuButtonTapped {
+    [[NSNotificationCenter defaultCenter] postNotificationName:OPEN_SIDE_MENU_NOTIFICATION object:nil];
     
 }
 

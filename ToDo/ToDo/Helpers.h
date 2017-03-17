@@ -16,4 +16,5 @@
 + (void)saveCustomObjectFromUserDefaultsForKey:(id)object forKey:(NSString *)key;
 + (id)loadCustomObjectFromUserDefaultsForKey:(NSString *)key;
 + (BOOL)isLoggedIn;
++ (UIViewController *)initViewControllerFrom:(NSString *)storyboardID;
 @end
