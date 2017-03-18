@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, TaskGroup) {
 // Constants
 #define  kAnimationDuration          0.3f
 #define kSpanDelta                   0.5
+#define kMenuOffset                  100.0f
 static NSString *const DATE_FORMAT = @"yyyy-MM-dd";
 
 
@@ -35,8 +36,7 @@ static NSString *const DATE_FORMAT = @"yyyy-MM-dd";
 static NSString *const LOCALITY_UPDATED_NOTIFICATION    = @"LOCALITY_UPDATED_NOTIFICATION";
 static NSString *const OPEN_SIDE_MENU_NOTIFICATION      = @"OPEN_SIDE_MENU_NOTIFICATION";
 static NSString *const CLOSE_SIDE_MENU_NOTIFICATION     = @"CLOSE_SIDE_MENU_NOTIFICATION";
-
-
+static NSString *const OPEN_VC_NOTIFICATION             = @"OPEN_VC_NOTIFICATION";
 
 // User Defaults
 static NSString *const USER_IMAGE = @"USER_IMAGE";

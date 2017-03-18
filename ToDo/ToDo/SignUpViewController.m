@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "User.h"
 
 #define kToolbarHeight 44.0f
 
@@ -66,6 +67,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)confirmButtonTapped {
+    [self signUpUser];
+}
+
 - (void)doneButtonTaped {
     
     self.birthdayTextField.text = [self.dateFormatter stringFromDate:self.datePicker.date];
@@ -74,7 +79,33 @@
     
 }
 
+- (void)swipeRight {
+    
+}
+
 #pragma mark - Private API
+
+- (void)signUpUser {
+    NSLog(@"Sing up user with %@, %@, %@ and %@",
+          self.usernameTextField.text,
+          self.emailTextField.text,
+          self.passwordTextField.text,
+          self.birthdayTextField.text);
+    
+    // Save user to NSUserDefaults
+    User *user = [[User alloc] init];
+    user.username = self.usernameTextField.text;
+    user.email = self.emailTextField.text;
+    user.password = self.passwordTextField.text;
+    user.birthday = self.birthdayTextField.text;
+    [Helpers saveCustomObjectFromUserDefaultsForKey:user forKey:USER_UD];
+    
+    [self performSegueWithIdentifier:@"HomeSegue" sender:nil];
+
+
+    
+
+}
 
 - (void)configurePlaceholders {
     [super configurePlaceholders];
@@ -88,6 +119,16 @@
     self.birthdayTextField.inputView = self.datePicker;
     self.birthdayTextField.inputAccessoryView = self.toolbar;
     
+}
+
+#pragma mark - View lifecucle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UISwipeGestureRecognizer *swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRight)];
+    swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeGestureRecognizer];
 }
 
 #pragma mark - UIResponder
