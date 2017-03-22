@@ -12,8 +12,8 @@
 @interface TaskViewController () <UITextFieldDelegate, DataManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
-@property (weak, nonatomic) IBOutlet UITextField *locationTextField;
-@property (weak, nonatomic) IBOutlet UITextField *groupTextField;
+@property (weak, nonatomic) IBOutlet UILabel *groupLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *selectorImageView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -103,7 +103,7 @@
 }
 
 - (void)configureUI {
-    self.locationTextField.text = DATA_MANAGER.userLocality;
+    self.locationLabel.text = DATA_MANAGER.userLocality;
     
     if (self.task) {
         self.titleTextField.text = self.task.heading;
@@ -141,7 +141,7 @@
     
     // Via notification
     [[NSNotificationCenter defaultCenter] addObserverForName:LOCALITY_UPDATED_NOTIFICATION object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        self.locationTextField.text = DATA_MANAGER.userLocality;
+        self.locationLabel.text = DATA_MANAGER.userLocality;
     }];
     
 }
@@ -163,7 +163,7 @@
 #pragma mark - DataManagerDelegate
 
 - (void)dataManagerDidUpdateLocality {
-    self.locationTextField.text = DATA_MANAGER.userLocality;
+    self.locationLabel.text = DATA_MANAGER.userLocality;
 }
 
 @end

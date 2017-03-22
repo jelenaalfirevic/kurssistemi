@@ -1,5 +1,5 @@
 //
-//  StatiscistViewController.h
+//  StatisticsViewController.h
 //  ToDo
 //
 //  Created by Djuro Alfirevic on 3/18/17.
@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StatiscistViewController : UIViewController
+@interface StatisticsViewController : UIViewController
 @end

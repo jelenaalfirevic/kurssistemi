@@ -14,7 +14,7 @@
 		9F30A63C1E7C528C00803876 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30A63B1E7C528C00803876 /* ContainerViewController.m */; };
 		9F30A63F1E7C52C000803876 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30A63E1E7C52C000803876 /* SideMenuViewController.m */; };
 		9F30A6421E7C611600803876 /* SideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30A6411E7C611600803876 /* SideMenuTableViewCell.m */; };
-		9F30A6451E7D477F00803876 /* StatiscistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30A6441E7D477F00803876 /* StatiscistViewController.m */; };
+		9F30A6451E7D477F00803876 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30A6441E7D477F00803876 /* StatisticsViewController.m */; };
 		9F30A6481E7D47B000803876 /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F30A6471E7D47B000803876 /* WalkthroughViewController.m */; };
 		9FCE43751E16D12B0021BF9B /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCE43741E16D12B0021BF9B /* SignUpViewController.m */; };
 		9FF942FB1E617A8F00EB9D22 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF942FA1E617A8F00EB9D22 /* CoreLocation.framework */; };
@@ -49,8 +49,8 @@
 		9F30A63E1E7C52C000803876 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
 		9F30A6401E7C611600803876 /* SideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuTableViewCell.h; sourceTree = "<group>"; };
 		9F30A6411E7C611600803876 /* SideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuTableViewCell.m; sourceTree = "<group>"; };
-		9F30A6431E7D477F00803876 /* StatiscistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatiscistViewController.h; sourceTree = "<group>"; };
-		9F30A6441E7D477F00803876 /* StatiscistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatiscistViewController.m; sourceTree = "<group>"; };
+		9F30A6431E7D477F00803876 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
+		9F30A6441E7D477F00803876 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
 		9F30A6461E7D47B000803876 /* WalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
 		9F30A6471E7D47B000803876 /* WalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
 		9FCE43731E16D12B0021BF9B /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -121,8 +121,8 @@
 				9F30A63E1E7C52C000803876 /* SideMenuViewController.m */,
 				9F30A63A1E7C528C00803876 /* ContainerViewController.h */,
 				9F30A63B1E7C528C00803876 /* ContainerViewController.m */,
-				9F30A6431E7D477F00803876 /* StatiscistViewController.h */,
-				9F30A6441E7D477F00803876 /* StatiscistViewController.m */,
+				9F30A6431E7D477F00803876 /* StatisticsViewController.h */,
+				9F30A6441E7D477F00803876 /* StatisticsViewController.m */,
 				9F30A6461E7D47B000803876 /* WalkthroughViewController.h */,
 				9F30A6471E7D47B000803876 /* WalkthroughViewController.m */,
 			);
@@ -318,7 +318,7 @@
 				9F2ABD791E70918800E8B607 /* UIViewController+Utilities.m in Sources */,
 				9F1E54C41E4F0FC300F18320 /* HomeViewController.m in Sources */,
 				9FF942FE1E61831E00EB9D22 /* DataManager.m in Sources */,
-				9F30A6451E7D477F00803876 /* StatiscistViewController.m in Sources */,
+				9F30A6451E7D477F00803876 /* StatisticsViewController.m in Sources */,
 				9F30A63F1E7C52C000803876 /* SideMenuViewController.m in Sources */,
 				9FF943051E69E5A300EB9D22 /* ToDo.xcdatamodeld in Sources */,
 				9F30A6481E7D47B000803876 /* WalkthroughViewController.m in Sources */,
